@@ -5,19 +5,22 @@ import {
   Flex,
   Avatar,
   HStack,
+  VStack,
   Link,
   useColorModeValue,
 } from '@chakra-ui/react';
+import { FaHome, FaUser, FaFolderOpen } from 'react-icons/fa';
 
 interface LinkProps {
   "name": string,
-  "path": string
+  "path": string,
+  "icon": ReactNode
 }
 
 const Links:LinkProps[]  = [
-  {"name":'Home', "path": "/"},
-  {"name":'About', "path": "/about"},
-  {"name":'Works', "path": "/works"},
+  {"name":'Home', "path": "/", "icon": (<FaHome/>)},
+  {"name":'About', "path": "/about", "icon": (<FaUser/>)},
+  {"name":'Works', "path": "/works", "icon": (<FaFolderOpen/>)},
 ];
 
 const NavLink = ({ children, path }: { children: ReactNode, path: string}) => (
@@ -45,6 +48,8 @@ export default function Simple() {
         width="100%" 
         position="fixed" 
         opacity="0.9"
+        boxShadow="xl"
+        zIndex={1}
       >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <HStack spacing={8} alignItems={'center'}>
@@ -61,7 +66,14 @@ export default function Simple() {
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
-                <NavLink key={link.name} path={link.path}>{link.name}</NavLink>
+                <NavLink key={link.name} path={link.path}>
+                  <HStack>
+                    {link.icon}
+                    <Box>
+                      {link.name}
+                    </Box>
+                  </HStack>
+                </NavLink>
               ))}
             </HStack>
           </HStack>
