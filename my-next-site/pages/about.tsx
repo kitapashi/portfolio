@@ -1,5 +1,5 @@
 import NextLink from 'next/link'
-import Layout from '../components/Layout'
+import Layout from '../components/templates/Layout'
 import {
   VStack,
   Heading,
