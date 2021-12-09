@@ -32,7 +32,7 @@ export default function Simple() {
         position="fixed" 
         opacity="0.9"
         boxShadow="xl"
-        zIndex={1}
+        zIndex={10}
       >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <HStack spacing={8} alignItems={'center'}>
