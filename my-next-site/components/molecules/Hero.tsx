@@ -45,7 +45,7 @@ const Hero = (props: HeroProps) => {
               </Text>
               <NextLink href={props.link}>
                 <Button bgColor={props.buttonColor}>
-                  <Text>About</Text>
+                  <Text>{props.button}</Text>
                   <ChevronRightIcon />
                 </Button>
               </NextLink>
@@ -54,24 +54,6 @@ const Hero = (props: HeroProps) => {
           {!props.reverse? <></>: <Box w="15vw" />}
         </Flex>
       </Box>
-      <style>
-      {`
-        .fadein {
-          animation: fadeIn 1.5s ease 0s 1 normal;
-          -webkit-animation: fadeIn 1.5s ease 0s 1 normal;
-        }
-        @keyframes fadeIn {
-          0% {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}
-      </style>
     </>
   )
 }
