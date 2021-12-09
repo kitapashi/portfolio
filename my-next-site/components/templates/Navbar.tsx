@@ -1,15 +1,13 @@
 import { ReactNode } from 'react';
-import NextLink from 'next/link';
 import {
   Box,
   Flex,
   Avatar,
   HStack,
-  VStack,
-  Link,
   useColorModeValue,
 } from '@chakra-ui/react';
 import { FaHome, FaUser, FaFolderOpen } from 'react-icons/fa';
+import {MyNextLink} from '../atomic/Link';
 
 interface LinkProps {
   "name": string,
@@ -23,21 +21,6 @@ const Links:LinkProps[]  = [
   {"name":'Works', "path": "/works", "icon": (<FaFolderOpen/>)},
 ];
 
-const NavLink = ({ children, path }: { children: ReactNode, path: string}) => (
-  <NextLink href={path}>
-    <Link
-      px={2}
-      py={1}
-      rounded={'md'}
-      _hover={{
-        textDecoration: 'none',
-        bg: useColorModeValue('gray.200', 'gray.700'),
-      }}
-    >
-      {children}
-    </Link>
-  </NextLink>
-);
 
 export default function Simple() {
   return (
@@ -64,16 +47,16 @@ export default function Simple() {
             <HStack
               as={'nav'}
               spacing={4}
-              display={{ base: 'none', md: 'flex' }}>
+              display="flex">
               {Links.map((link) => (
-                <NavLink key={link.name} path={link.path}>
+                <MyNextLink key={link.name} path={link.path}>
                   <HStack>
                     {link.icon}
-                    <Box>
+                    <Box display={{ base: 'none', md: 'inherit' }} >
                       {link.name}
                     </Box>
                   </HStack>
-                </NavLink>
+                </MyNextLink>
               ))}
             </HStack>
           </HStack>
