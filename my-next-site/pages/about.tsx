@@ -9,7 +9,7 @@ import {
 const AboutPage = () => (
   <Layout title="About | Yuki Kitahashi's Portfolio">
     <VStack spacing="2" alignItems="flex-start">
-        <Heading as="h1">About @kitapashi</Heading>
+        <Heading as="h1" size="3xl">About @kitapashi</Heading>
         <Text as="p" fontSize="lg">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
           condimentum quam arcu, eu tempus tortor molestie at. Vestibulum

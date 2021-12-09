@@ -1,9 +1,12 @@
 import { GetStaticProps } from 'next'
-import Link from 'next/link'
+import { Grid, Heading, Box } from '@chakra-ui/react'
 
 import { User } from '../../interfaces'
 import Layout from '../../components/templates/Layout'
-import List from '../../components/List'
+import WorksCard from '../../components/molecules/WorksCard'
+import PhotoCarousel from '../../components/molecules/PhotoCarousel'
+import worksData from '../../contents/works/worksData'
+import {MyLink} from  '../../components/atomic/Link';
 
 type Props = {
   items: User[]
@@ -11,17 +14,36 @@ type Props = {
 
 const WithStaticProps = ({ items }: Props) => (
   <Layout title="Works | Yuki Kitahashi's Portfolio">
-    <h1>Users List</h1>
-    <p>
-      Example fetching data from inside <code>getStaticProps()</code>.
-    </p>
-    <p>You are currently on: /users</p>
-    <List items={items} />
-    <p>
-      <Link href="/">
-        <a>Go home</a>
-      </Link>
-    </p>
+    <Heading as="h1" size="3xl" my={6}>Works</Heading>
+    <Grid
+      templateColumns={{
+        base: "repeat(1, 1fr)", 
+        md: "repeat(2, 1fr)", 
+        lg: "repeat(3, 1fr)",
+        xl: "repeat(4, 1fr)"
+      }}
+      gap={10}
+      px={20}
+      pb={10}
+      className="fadein"
+    >
+      {
+        worksData.map((data, i) => (
+          <MyLink path={data.link} key={i}>
+            <WorksCard
+              title={data.title}
+              description={data.description}
+              imageSrc={data.imageSrc}
+              type={data.type}
+            />
+          </MyLink>
+        ))
+      }
+    </Grid>
+    <Heading as="h2" my={6}>Photo</Heading>
+    <Box px={20} pb={10} className="fadein">
+      <PhotoCarousel /> 
+    </Box>
   </Layout>
 )
 
