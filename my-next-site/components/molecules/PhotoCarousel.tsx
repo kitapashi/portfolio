@@ -4,6 +4,7 @@ import { Box, IconButton, useBreakpointValue } from '@chakra-ui/react';
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 // And react-slick as our Carousel Lib
 import Slider from 'react-slick';
+import cards from '../../contents/works/photoCards';
 
 // Settings for the slider
 const settings = {
@@ -18,6 +19,11 @@ const settings = {
   slidesToScroll: 1,
 };
 
+export interface PhotoCard {
+  description: string;
+  imageSrc: string;
+}
+
 const Carousel = () => {
   // As we have used custom buttons, we need a reference variable to
   // change the state
@@ -28,19 +34,13 @@ const Carousel = () => {
   const top = useBreakpointValue({ base: '90%', md: '50%' });
   const side = useBreakpointValue({ base: '30%', md: '10px' });
 
-  // These are the images used in the slide
-  const cards = [
-    'https://images.unsplash.com/photo-1612852098516-55d01c75769a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
-    'https://images.unsplash.com/photo-1627875764093-315831ac12f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
-    'https://images.unsplash.com/photo-1571432248690-7fd6980a1ae2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
-  ];
-
   return (
     <Box
       position={'relative'}
-      maxH="700px"
+      maxH="800px"
       width={'full'}
-      overflow={'hidden'}>
+      overflow={'hidden'}
+    >
       {/* CSS files for react-slick */}
       <link
         rel="stylesheet"
@@ -56,7 +56,7 @@ const Carousel = () => {
       {/* Left Icon */}
       <IconButton
         aria-label="left-arrow"
-        colorScheme="messenger"
+        colorScheme="gray"
         borderRadius="full"
         position="absolute"
         left={side}
@@ -69,7 +69,7 @@ const Carousel = () => {
       {/* Right Icon */}
       <IconButton
         aria-label="right-arrow"
-        colorScheme="messenger"
+        colorScheme="gray"
         borderRadius="full"
         position="absolute"
         right={side}
@@ -81,7 +81,7 @@ const Carousel = () => {
       </IconButton>
       {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {cards.map((url, index) => (
+        {cards.map((data, index) => (
           <Box
             key={index}
             height={'6xl'}
@@ -89,8 +89,18 @@ const Carousel = () => {
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
             backgroundSize="cover"
-            backgroundImage={`url(${url})`}
-          />
+            backgroundImage={`url(${data.imageSrc})`}
+          >
+            <Box
+              bgColor={"gray.50"}
+              opacity={0.7}
+              textAlign={"center"}
+              fontSize={"3xl"}
+              py={5}
+            >
+              {data.description}
+            </Box>
+          </Box>
         ))}
       </Slider>
     </Box>
