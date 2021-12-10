@@ -1,12 +1,11 @@
 import { GetStaticProps } from 'next'
 import { Grid, Heading, Box } from '@chakra-ui/react'
 
-import { User } from '../../interfaces'
-import Layout from '../../components/templates/Layout'
-import WorksCard from '../../components/molecules/WorksCard'
-import PhotoCarousel from '../../components/molecules/PhotoCarousel'
-import worksData from '../../contents/works/worksData'
-import {MyLink} from  '../../components/atomic/Link';
+import { User } from '../interfaces'
+import Layout from '../components/templates/Layout'
+import WorksCard from '../components/molecules/WorksCard'
+import PhotoCarousel from '../components/molecules/PhotoCarousel'
+import worksData from '../contents/works/worksData'
 
 type Props = {
   items: User[]
@@ -29,14 +28,13 @@ const WithStaticProps = ({ items }: Props) => (
     >
       {
         worksData.map((data, i) => (
-          <MyLink path={data.link} key={i}>
-            <WorksCard
-              title={data.title}
-              description={data.description}
-              imageSrc={data.imageSrc}
-              type={data.type}
-            />
-          </MyLink>
+          <WorksCard
+            title={data.title}
+            description={data.description}
+            imageSrc={data.imageSrc}
+            type={data.type}
+            path={data.path}
+          />
         ))
       }
     </Grid>
