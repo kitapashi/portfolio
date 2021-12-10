@@ -1,10 +1,7 @@
 import React, { ReactNode } from 'react'
-import Link from 'next/link'
 import Head from 'next/head'
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { position } from '@chakra-ui/styled-system';
-import { Box } from '@chakra-ui/react';
 
 type Props = {
   children?: ReactNode
