@@ -1,17 +1,11 @@
-import { GetStaticProps } from 'next'
 import { Grid, Heading, Box } from '@chakra-ui/react'
 
-import { User } from '../interfaces'
 import Layout from '../components/templates/Layout'
 import WorksCard from '../components/molecules/WorksCard'
 import PhotoCarousel from '../components/molecules/PhotoCarousel'
 import worksData from '../contents/works/worksData'
 
-type Props = {
-  items: User[]
-}
-
-const WithStaticProps = ({ items }: Props) => (
+const WorksPage = () => (
   <Layout title="Works | Yuki Kitahashi's Portfolio">
     <Heading as="h1" size="3xl" my={6}>Works</Heading>
     <Grid
@@ -38,19 +32,11 @@ const WithStaticProps = ({ items }: Props) => (
         ))
       }
     </Grid>
-    <Heading as="h2" my={6}>Photo</Heading>
+    <Heading as="h2" size="2xl" my={6}>Photo</Heading>
     <Box px={20} pb={10} className="fadein">
       <PhotoCarousel /> 
     </Box>
   </Layout>
 )
 
-export const getStaticProps: GetStaticProps = async () => {
-  // Example for including static props in a Next.js function component page.
-  // Don't forget to include the respective types for any props passed into
-  // the component.
-  const items: User[] = []
-  return { props: { items } }
-}
-
-export default WithStaticProps
+export default WorksPage;
