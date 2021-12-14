@@ -13,8 +13,7 @@ export interface WorksCardProps {
 const WorksCard: React.FC<WorksCardProps> = (props: WorksCardProps) => {
   return (
     <Link
-    px={2}
-    py={1}
+    p={2}
     rounded={'md'}
     href={props.path}
     isExternal

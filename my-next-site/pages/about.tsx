@@ -24,7 +24,7 @@ const AboutPage = () => (
           divider={<StackDivider borderColor='gray.200'/>}
           className='fadein'
         >
-          <Text as="p" fontSize="lg">
+          <Text as="p" fontSize="lg" py={10}>
             ここに色々コンテンツを入れていくよ
             入れる内容：
             ・名前

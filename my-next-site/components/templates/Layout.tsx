@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react'
 import Head from 'next/head'
 import Navbar from './Navbar';
 import Footer from './Footer';
+import {Box} from '@chakra-ui/react';
 
 type Props = {
   children?: ReactNode
@@ -19,7 +20,9 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       <header>
         <Navbar/>
       </header>
-      {children}
+      <Box px={5}>
+        {children}
+      </Box>
         <Footer />
     </div>
   </>
