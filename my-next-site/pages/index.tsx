@@ -1,8 +1,8 @@
 import Layout from '../components/templates/Layout';
 import Hero from '../components/molecules/Hero';
-import topPic from '../public/top.png';
-import top2Pic from '../public/top2.png';
-import top3Pic from '../public/top3.png';
+import topPic from '../public/top.jpeg';
+import top2Pic from '../public/top2.jpeg';
+import top3Pic from '../public/top3.jpeg';
 
 
 

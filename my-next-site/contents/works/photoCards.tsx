@@ -1,5 +1,5 @@
 import { PhotoCard } from "../../components/molecules/PhotoCarousel";
-import pic from '../../public/top.png';
+import pic from '../../public/top.jpeg';
 import dsc00788 from '../../public/photo/DSC00788.jpeg';
 import dsc01058 from '../../public/photo/DSC01058.jpeg';
 import dsc01337 from '../../public/photo/DSC01337.jpeg';
