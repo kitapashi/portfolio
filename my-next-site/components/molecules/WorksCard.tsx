@@ -7,8 +7,9 @@ export interface WorksCardProps {
   description: string;
   type: WorkBadgeType;
   imageSrc: string;
-  path: string
-}
+  path: string;
+  date: string;
+};
 
 const WorksCard: React.FC<WorksCardProps> = (props: WorksCardProps) => {
   return (
@@ -38,7 +39,8 @@ const WorksCard: React.FC<WorksCardProps> = (props: WorksCardProps) => {
             h="270px"
             w="100%"
             />
-          <Box w="100%" textAlign="center">
+          <Box w="100%">
+            <Text as="p" color="gray.500">{props.date}</Text>
             <Heading as="h3" size="md" isTruncated py={3}>{props.title}</Heading>
             <HStack>
               <WorkBadge type={props.type} />

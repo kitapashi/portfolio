@@ -28,12 +28,13 @@ const WorksPage = () => (
             imageSrc={data.imageSrc}
             type={data.type}
             path={data.path}
+            date={data.date}
           />
         ))
       }
     </Grid>
     <Heading as="h2" size="2xl" my={6}>Photo</Heading>
-    <Text as="p" my={6} fontSize="xl">写真の全体像はInstagramにてご確認ください。</Text>
+    <Text as="p" my={6} fontSize="xl">写真の全体像・その他の写真はInstagramにてご確認ください。</Text>
     <Box px={20} pb={10} className="fadein">
       <PhotoCarousel /> 
     </Box>
