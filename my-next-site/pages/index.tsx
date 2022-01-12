@@ -19,20 +19,20 @@ const IndexPage = () => {
         button="About"
         buttonColor="aqua"
         />
-      <Hero image={top2Pic} reverse={true}
+      <Hero image={top3Pic} reverse={true}
         title="Works" 
         description="エンジニアリング、写真、記事執筆等"
         link="/works"
         button="Works"
         buttonColor="khaki"
         />
-      <Hero image={top3Pic}
+      {/* <Hero image={top2Pic}
         title="(仮)音楽レビューサイト" 
         description="製作中"
         link="https://google.com"
         button="Site"
         buttonColor="palegreen"
-      />
+      /> */}
     </Layout>
   )
 }
