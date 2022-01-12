@@ -2,8 +2,17 @@ import { WorksCardProps } from "../../components/molecules/WorksCard"
 import slsqiita from '../../public/slsqiita.jpeg';
 import cfqiita from '../../public/cfqiita.jpeg';
 import best2020 from '../../public/2020best.jpeg';
+import best2021 from '../../public/2021best.jpg';
 
 const data: WorksCardProps[] = [
+  {
+    date: "2021-12-30",
+    title: "私的2021年ベストアルバム",
+    description: "[note]2021年新譜+旧譜のレビュー",
+    imageSrc: best2021.src,
+    type: "music",
+    path: "https://note.com/kitapashi/n/n8175297deb28" 
+  },
   {
     date: "2021-01-23",
     title: "CloudFront+API Gateway構成ではHostヘッダに気をつけよう",
