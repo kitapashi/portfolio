@@ -18,7 +18,7 @@ const WorksCard: React.FC<WorksCardProps> = (props: WorksCardProps) => {
     rounded={'md'}
     href={props.path}
     isExternal
-    maxW="400px"
+    maxW={["380px", "400px"]}
     _hover={{
       textDecoration: 'none',
       bg: 'gray.200',

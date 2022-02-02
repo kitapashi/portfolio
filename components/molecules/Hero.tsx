@@ -37,7 +37,7 @@ const Hero = (props: HeroProps) => {
           w="100vw"
           minH="700px"
         >
-          {props.reverse? <></>: <Box w="15vw" />}
+          {props.reverse? <></>: <Box w={["7vw","15vw"]} />}
           <TopCard title={props.title}>
             <VStack w="100%">
               <Text textAlign="center">
@@ -51,7 +51,7 @@ const Hero = (props: HeroProps) => {
               </NextLink>
             </VStack>
           </TopCard>
-          {!props.reverse? <></>: <Box w="15vw" />}
+          {!props.reverse? <></>: <Box w={["17vw","15vw"]} />}
         </Flex>
       </Box>
     </>

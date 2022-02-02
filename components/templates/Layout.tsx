@@ -20,7 +20,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       <header>
         <Navbar/>
       </header>
-      <Box px={5}>
+      <Box px={[0,5]}>
         {children}
       </Box>
         <Footer />

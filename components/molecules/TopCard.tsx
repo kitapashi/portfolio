@@ -11,9 +11,9 @@ const TopCard: React.FC<TopCardProps> = ({children, title}: TopCardProps) => {
     <Box
       position="relative"
       bg="gray.50"
-      px={12}
+      px={[2,12]}
       py={9}
-      maxW="400px"
+      maxW={["350px","400px"]}
       boxShadow="xl"
       rounded="2xl"
       opacity="0.8"

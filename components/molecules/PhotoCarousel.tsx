@@ -84,18 +84,18 @@ const Carousel = () => {
         {cards.map((data, index) => (
           <Box
             key={index}
-            height={'6xl'}
+            height={['lg','2xl','4xl','6xl']}
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
-            backgroundSize="cover"
+            backgroundSize={["contain","contain","contain","cover"]}
             backgroundImage={`url(${data.imageSrc})`}
           >
             <Box
               bgColor={"gray.50"}
               opacity={0.7}
               textAlign={"center"}
-              fontSize={"3xl"}
+              fontSize={["xl","3xl"]}
               py={5}
             >
               {data.description}

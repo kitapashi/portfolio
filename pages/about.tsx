@@ -3,7 +3,7 @@ import Layout from '../components/templates/Layout'
 import {
   VStack,
   Heading,
-  HStack,
+  Stack,
   StackDivider,
   Image
 } from '@chakra-ui/react'
@@ -18,7 +18,7 @@ import SocialLink from '../contents/about/SocialLink';
 const AboutPage = () => (
   <Layout title="About | Yuki Kitahashi's Portfolio">
     <Heading as="h1" size="3xl" my={6}>About @kitapashi</Heading>
-    <HStack spacing={10} px={8} alignItems={'flex-start'}>
+    <Stack direction={['column', 'row']} spacing={10} alignItems={'flex-start'}>
       <Image src={profileImg.src}
         fit={'contain'}
         p={10}
@@ -41,7 +41,7 @@ const AboutPage = () => (
         <Certification />
         <Career />
       </VStack>
-    </HStack>
+    </Stack>
   </Layout>
 )
 

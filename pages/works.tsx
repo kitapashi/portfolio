@@ -16,7 +16,8 @@ const WorksPage = () => (
         xl: "repeat(4, 1fr)"
       }}
       gap={10}
-      px={20}
+      px={[0,5,10,20]}
+      pl={[5,0]}
       pb={10}
       className="fadein"
     >
@@ -35,7 +36,7 @@ const WorksPage = () => (
     </Grid>
     <Heading as="h2" size="2xl" my={6}>Photo</Heading>
     <Text as="p" my={6} fontSize="xl">写真の全体像・その他の写真はInstagramにてご確認ください。</Text>
-    <Box px={20} pb={10} className="fadein">
+    <Box px={[0,5,10,20]} pb={10} className="fadein">
       <PhotoCarousel /> 
     </Box>
   </Layout>

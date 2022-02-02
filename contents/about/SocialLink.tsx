@@ -2,7 +2,7 @@ import React from "react";
 import {
   VStack,
   Text,
-  HStack
+  Stack
 } from '@chakra-ui/react';
 import { FaInstagram, FaGithub, FaTwitter } from 'react-icons/fa';
 
@@ -11,7 +11,7 @@ import SocialButton from '../../components/atomic/SocialButton';
 
 const SocialLink: React.FC = () => {
   return (
-    <HStack spacing={6}>
+    <Stack direction={['column', 'row']} spacing={6}>
       <VStack>
         <SocialButton label={'Twitter'} href={'https://twitter.com/kitapashi'}>
           <FaTwitter />
@@ -36,7 +36,7 @@ const SocialLink: React.FC = () => {
         </SocialButton>
         <Text>Instagram</Text>
       </VStack>
-    </HStack>
+    </Stack>
   );
 };
 
